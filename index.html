@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IHAF — International Humanitarian Aid Federation. One Humanity. One Mission. Global Impact.">
+<title>IHAF | International Humanitarian Aid Federation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c2d4d;
+  --navy-deep: #081f36;
+  --blue: #1a6fa8;
+  --gold: #c9a14a;
+  --gold-soft: #e8d29a;
+  --terracotta: #c45c3a;
+  --sage: #5c7a62;
+  --sand: #f3ebe0;
+  --cream: #faf6f0;
+  --ink: #1c2b3a;
+  --muted: #5a6a7a;
+  --white: #ffffff;
+  --line: #e5ddd2;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { width: min(1140px, 92%); margin: 0 auto; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 240, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(12, 45, 77, 0.12);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text strong { font-size: 17px; letter-spacing: 0.4px; }
+.brand-text small {
+  font-size: 9.5px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.links a:hover { color: var(--blue); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.18s, background 0.18s;
+}
+.btn:hover { background: #d4ad55; transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.75);
+  color: white;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.12); border-color: white; }
+.menu {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(8, 31, 54, 0.88) 0%, rgba(12, 45, 77, 0.72) 45%, rgba(12, 45, 77, 0.45) 100%),
+    url('https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=1600&q=80') center/cover no-repeat;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 90px 0 80px;
+  max-width: 620px;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--gold-soft);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.18;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.hero h1 span { color: var(--gold-soft); }
+.hero p {
+  font-size: 17px;
+  color: #d4e0ec;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 6px;
+  background: var(--navy-deep);
+}
+.photo-strip img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.photo-strip .caption {
+  grid-column: 1 / -1;
+  background: var(--navy);
+  color: #c5d4e4;
+  font-size: 13px;
+  padding: 10px 4%;
+  text-align: center;
+}
+
+.trust-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 26px 0;
+}
+.trust-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.trust-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--sand);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+.trust-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+}
+.trust-item span { font-size: 13px; color: var(--muted); }
+
+section { padding: 80px 0; }
+.section-head { max-width: 640px; margin-bottom: 40px; }
+.section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+.kicker {
+  color: var(--terracotta);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin-bottom: 8px;
+}
+.section-head h2 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.section-head p { color: var(--muted); font-size: 16px; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-img {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(12, 45, 77, 0.12);
+  border: 3px solid white;
+}
+.about-img img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+.about-panel {
+  background: var(--white);
+  padding: 28px 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-top: 24px;
+}
+.about-panel h3 {
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+}
+.check {
+  display: flex;
+  gap: 10px;
+  margin: 11px 0;
+  color: #3d4e60;
+  font-size: 14.5px;
+  align-items: flex-start;
+}
+.check .mark {
+  color: var(--gold);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.areas { background: var(--sand); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(12, 45, 77, 0.1);
+}
+.card-img {
+  height: 160px;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+.card:hover .card-img img { transform: scale(1.05); }
+.card-body { padding: 20px 18px 22px; }
+.card h3 {
+  color: var(--navy);
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.impact {
+  padding: 24px 18px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+}
+.impact strong {
+  display: block;
+  font-size: 26px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.impact span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.stories { background: var(--white); }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+}
+.story-large {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 340px;
+}
+.story-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.story-large .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,31,54,0.85) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: white;
+}
+.story-large h3 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.story-large p { font-size: 14px; color: #c8d6e6; max-width: 380px; }
+.story-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+.story-small {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 160px;
+}
+.story-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.story-small .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,31,54,0.8) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  color: white;
+}
+.story-small h3 { font-size: 16px; margin-bottom: 2px; }
+.story-small p { font-size: 13px; color: #c8d6e6; }
+
+.join {
+  background: linear-gradient(125deg, var(--navy-deep), #0d3a5c 60%, #14507a);
+  color: white;
+  position: relative;
+}
+.join-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 44px;
+  align-items: center;
+}
+.join h2 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(28px, 3.6vw, 36px);
+  line-height: 1.2;
+  margin: 10px 0 14px;
+}
+.join p { color: #b8cce0; margin-bottom: 10px; font-size: 15.5px; }
+.join-box {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 28px 26px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+.join-box h3 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+}
+.join-box .sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.join-box label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 5px;
+  color: var(--navy);
+}
+.join-box input,
+.join-box select,
+.join-box textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #d8cfc4;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 15px;
+  background: white;
+  transition: border-color 0.2s;
+}
+.join-box input:focus,
+.join-box select:focus,
+.join-box textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+.join-box textarea { min-height: 80px; resize: vertical; }
+.join-box .btn { width: 100%; margin-top: 16px; padding: 13px; }
+.form-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.contact-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.contact-card h3 {
+  color: var(--navy);
+  margin: 0 0 12px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.contact-card p {
+  color: var(--muted);
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+.notice {
+  padding: 12px 14px;
+  background: #fdf4e7;
+  border-left: 3px solid var(--gold);
+  font-size: 13px;
+  color: #6b5420;
+  border-radius: 0 6px 6px 0;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+.arabic {
+  direction: rtl;
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 600;
+  margin: 8px 0 2px;
+}
+
+footer {
+  background: var(--navy-deep);
+  color: #b0c2d4;
+  padding: 42px 0 22px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.footer-brand span { color: var(--gold); }
+footer p {
+  font-size: 13.5px;
+  color: #8fa3b8;
+  max-width: 400px;
+  line-height: 1.55;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.footer-links a:hover { color: var(--gold-soft); }
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: #7a8fa5;
+  padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 78px; left: 0; right: 0;
+    background: var(--cream);
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .links.open { display: flex; }
+  .menu { display: block; }
+  .nav > .btn { display: none; }
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+  .photo-strip img:first-child { grid-column: 1 / -1; height: 200px; }
+  .about-grid, .join-grid, .contact-grid, .story-grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .impact-grid { grid-template-columns: 1fr 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .footer-top { flex-direction: column; }
+  .story-side { grid-template-rows: auto auto; }
+  .story-large { min-height: 280px; }
+}
+@media (max-width: 560px) {
+  section { padding: 56px 0; }
+  .cards { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .photo-strip { grid-template-columns: 1fr; }
+  .photo-strip img { height: 180px; }
+  .hero-content { padding: 70px 0 60px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="IHAF home">
+      <img class="brand-logo" src="ihaf-logo.png" alt="IHAF logo">
+      <span class="brand-text">
+        <strong>IHAF</strong>
+        <small>International Humanitarian Aid Federation</small>
+      </span>
+    </a>
+    <nav class="links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#focus">Our Focus</a>
+      <a href="#stories">Stories</a>
+      <a href="#join">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#join">Partner with IHAF</a>
+    <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-bg" role="img" aria-label="Children in a classroom in Sierra Leone"></div>
+    <div class="wrap hero-content">
+      <div class="eyebrow">Humanity knows no borders</div>
+      <h1>One Humanity.<br>One Mission.<br><span>Global Impact.</span></h1>
+      <p>IHAF is a proposed global platform for cooperation, compassion and practical support — rooted in Uganda, open to the world.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#about">Discover our mission</a>
+        <a class="btn btn-outline" href="#join">Get involved</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="photo-strip">
+    <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=900&q=80" alt="Smiling child in a village in Uganda at golden hour">
+    <img src="https://images.pexels.com/photos/34253699/pexels-photo-34253699.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Group of children smiling together">
+    <img src="https://images.pexels.com/photos/19301627/pexels-photo-19301627.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children posing in a village setting">
+    <div class="caption">Communities across Africa — dignity, learning and everyday life</div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🌍</div>
+        <div>
+          <strong>Global cooperation</strong>
+          <span>Connecting partners across borders</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🫶</div>
+        <div>
+          <strong>Human dignity</strong>
+          <span>Respect and care for every person</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤝</div>
+        <div>
+          <strong>Shared action</strong>
+          <span>Working together for real support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-head">
+          <div class="kicker">Who we are</div>
+          <h2>A shared mission, stronger together.</h2>
+          <p>Humanitarian challenges are too large for any one organisation to solve alone. IHAF’s vision is to help charities, aid organisations, donors, volunteers and communities cooperate so support reaches people more effectively.</p>
+          <p style="margin-top:14px;color:var(--muted)">With roots intended in Uganda and a global outlook, we aim for partnerships that put people first.</p>
+        </div>
+        <div class="about-panel">
+          <h3>Our guiding commitments</h3>
+          <div class="check"><span class="mark">✓</span><span><strong>Humanity</strong> — reduce suffering wherever people need help.</span></div>
+          <div class="check"><span class="mark">✓</span><span><strong>Impartiality</strong> — support based on need, without discrimination.</span></div>
+          <div class="check"><span class="mark">✓</span><span><strong>Integrity</strong> — honest stewardship and accountability.</span></div>
+          <div class="check"><span class="mark">✓</span><span><strong>Cooperation</strong> — respect partners and work through voluntary agreements.</span></div>
+          <div class="check"><span class="mark">✓</span><span><strong>Local leadership</strong> — listen to communities and support local solutions.</span></div>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="https://images.pexels.com/photos/33976322/pexels-photo-33976322.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Children playing and laughing in an African village street">
+      </div>
+    </div>
+  </section>
+
+  <section class="areas" id="focus">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="kicker">Where help can make a difference</div>
+        <h2>Our humanitarian focus</h2>
+        <p>Proposed areas of work, developed with partners and the communities they serve.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=600&q=80" alt="Children in a classroom in Sierra Leone">
+          </div>
+          <div class="card-body">
+            <h3>Education</h3>
+            <p>Learning opportunities, school support and pathways for young people.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/19297739/pexels-photo-19297739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children in a rural community">
+          </div>
+          <div class="card-body">
+            <h3>Food &amp; basic needs</h3>
+            <p>Access to food, clean water, essential supplies and safe shelter.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/34253699/pexels-photo-34253699.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children smiling together outdoors">
+          </div>
+          <div class="card-body">
+            <h3>Community development</h3>
+            <p>Locally led initiatives that strengthen resilience and opportunity.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/19301627/pexels-photo-19301627.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children in a village with thatched homes">
+          </div>
+          <div class="card-body">
+            <h3>Emergency relief</h3>
+            <p>Coordinated responses to disasters, displacement and urgent needs.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=600&q=80" alt="Young person smiling in a Ugandan village">
+          </div>
+          <div class="card-body">
+            <h3>Health &amp; wellbeing</h3>
+            <p>Partnerships that help communities access appropriate care.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/33976322/pexels-photo-33976322.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Village street with children and community members">
+          </div>
+          <div class="card-body">
+            <h3>Partnership &amp; coordination</h3>
+            <p>Bringing organisations and volunteers together transparently.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="kicker">How we aim to work</div>
+        <h2>From good intentions to practical action</h2>
+        <p>Trust is built through clear responsibilities, community participation and results that can be explained.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact">
+          <strong>01</strong>
+          <span>Listen to communities and understand the need.</span>
+        </div>
+        <div class="impact">
+          <strong>02</strong>
+          <span>Work with credible local and international partners.</span>
+        </div>
+        <div class="impact">
+          <strong>03</strong>
+          <span>Use resources responsibly and communicate clearly.</span>
+        </div>
+        <div class="impact">
+          <strong>04</strong>
+          <span>Review outcomes, learn and improve the response.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stories" id="stories">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">On the ground</div>
+        <h2>Moments that remind us why this work matters</h2>
+        <p>These photographs come from communities across Africa. They are not IHAF programmes — they show the people and places humanitarian work seeks to serve with dignity.</p>
+      </div>
+      <div class="story-grid">
+        <div class="story-large">
+          <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=1000&q=80" alt="Classroom of children in Sierra Leone">
+          <div class="overlay">
+            <h3>Learning together</h3>
+            <p>A classroom in Sierra Leone — education remains one of the strongest foundations for long-term opportunity.</p>
+          </div>
+        </div>
+        <div class="story-side">
+          <div class="story-small">
+            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=700&q=80" alt="Child smiling in Ugandan village">
+            <div class="overlay">
+              <h3>Everyday joy</h3>
+              <p>A moment of light in a village in Uganda.</p>
+            </div>
+          </div>
+          <div class="story-small">
+            <img src="https://images.pexels.com/photos/34253699/pexels-photo-34253699.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Children smiling together">
+            <div class="overlay">
+              <h3>Friendship &amp; belonging</h3>
+              <p>Community starts with the people around us.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap join-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-soft)">Be part of the mission</div>
+        <h2>Humanitarian progress starts when we work together.</h2>
+        <p>Are you a charity, community organisation, potential donor, volunteer or humanitarian professional? Tell us how you would like to contribute.</p>
+        <p>Partnerships should be based on shared values, due diligence and clear agreements.</p>
+      </div>
+      <form class="join-box" id="interestForm">
+        <h3>Express your interest</h3>
+        <p class="sub">This prepares a message on your device — nothing is stored by us.</p>
+        <label for="name">Your name</label>
+        <input id="name" name="name" placeholder="Enter your name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        <label for="role">I am interested as a…</label>
+        <select id="role" name="role">
+          <option>Volunteer</option>
+          <option>Charity / NGO</option>
+          <option>Potential partner</option>
+          <option>Donor / supporter</option>
+          <option>Humanitarian professional</option>
+          <option>Other</option>
+        </select>
+        <label for="message">How would you like to help?</label>
+        <textarea id="message" name="message" placeholder="Tell us a little about your interest"></textarea>
+        <button class="btn" type="submit">Prepare interest message →</button>
+        <p class="form-note">Demo form: it prepares a message on your device; it does not send or store your information.</p>
+        <p id="formResult" role="status" style="display:none;color:#145c37;font-size:13px;margin-top:10px"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Contact &amp; next steps</div>
+        <h2>Help shape the IHAF vision.</h2>
+        <p>We welcome conversations with people and organisations interested in principled humanitarian cooperation.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>IHAF — International Humanitarian Aid Federation</h3>
+          <p><strong>Proposed base:</strong> Uganda<br>
+          <strong>Scope:</strong> International humanitarian cooperation</p>
+          <p class="arabic">الاتحاد الدولي للمساعدات الإنسانية</p>
+          <p style="font-size:13px;color:var(--muted)">International Federation for Humanitarian Aid</p>
+          <div class="notice">IHAF is presented here as a proposed organisation. Registration, official contacts, partnerships, programmes and fundraising must be confirmed before public launch.</div>
+        </div>
+        <div class="contact-card">
+          <h3>Before public launch</h3>
+          <p>Confirm legal registration and name availability, appoint accountable leadership, publish safeguarding and financial policies, and add verified contact details.</p>
+          <p>Do not publish donation instructions until legal status, banking arrangements and financial controls are established.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><span>IHAF</span> | International Humanitarian Aid Federation</div>
+        <p>One Humanity. One Mission. Global Impact. A proposed humanitarian federation focused on cooperation, dignity and responsible support.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#focus">Our focus</a>
+        <a href="#stories">Stories</a>
+        <a href="#join">Get involved</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> IHAF concept website. Photos used under free licenses (Unsplash / Pexels).</span>
+      <span>Humanity • Cooperation • Accountability</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menu = document.getElementById('menu');
+const nav = document.getElementById('navlinks');
+menu.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? '✕' : '☰';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded', 'false');
+  menu.textContent = '☰';
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('interestForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.currentTarget;
+  const body = `IHAF expression of interest\nName: ${f.name.value}\nEmail: ${f.email.value}\nInterested as: ${f.role.value}\nMessage: ${f.message.value || 'No message added.'}`;
+  const result = document.getElementById('formResult');
+  result.style.display = 'block';
+  result.textContent = 'Your message is ready. Your email app may open to let you send it.';
+  const link = document.createElement('a');
+  link.href = 'mailto:?subject=' + encodeURIComponent('Expression of interest in IHAF') + '&body=' + encodeURIComponent(body);
+  link.style.display = 'inline-block';
+  link.style.marginTop = '8px';
+  link.style.fontWeight = 'bold';
+  link.style.color = '#145c37';
+  link.textContent = 'Open email app to send';
+  result.appendChild(document.createElement('br'));
+  result.appendChild(link);
+});
+</script>
+</body>
+</html>
