@@ -661,6 +661,80 @@ footer p {
   }
 }
 
+
+/* ===== Donate section ===== */
+#donate { background: var(--white); }
+.donate-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(12, 45, 77, 0.08);
+}
+.donate-card * { min-width: 0; }
+.d-toggle { display: flex; background: var(--sand); padding: 4px; border-radius: 10px; margin-bottom: 22px; }
+.d-toggle button {
+  flex: 1; padding: 10px; border: 0; background: transparent; font: inherit; font-weight: 700;
+  border-radius: 8px; cursor: pointer; color: var(--muted);
+}
+.d-toggle button.active { background: var(--white); color: var(--navy); box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+.d-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 700; color: var(--navy); }
+.d-head select, .d-fields input, #d-custom {
+  font: inherit; border: 1.5px solid var(--line); border-radius: 8px; background: var(--white); color: var(--ink);
+}
+.d-head select { padding: 6px 10px; font-weight: 600; }
+.d-amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+.d-amounts button {
+  padding: 12px 6px; border: 2px solid var(--line); background: var(--white); border-radius: 10px;
+  font: inherit; font-weight: 700; cursor: pointer; color: var(--navy); transition: .2s;
+}
+.d-amounts button:hover, .d-amounts button.active { border-color: var(--gold); background: #fdf4e7; }
+#d-custom { width: 100%; padding: 12px 14px; margin-bottom: 22px; }
+.d-label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.d-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 18px; }
+.d-tabs button {
+  border: 2px solid var(--line); background: var(--white); border-radius: 10px; padding: 10px 4px;
+  font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; color: var(--ink); line-height: 1.3; transition: .2s;
+}
+.d-tabs button span { display: block; font-size: 20px; margin-bottom: 2px; }
+.d-tabs button.active { border-color: var(--navy); background: var(--navy); color: var(--white); }
+.d-panel { display: none; background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.d-panel.active { display: block; }
+.d-panel h3 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.d-panel > p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+.d-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  background: var(--cream); border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 12px; margin-bottom: 10px; font-size: 14px; word-break: break-word;
+}
+.d-row .copy {
+  flex-shrink: 0; background: var(--navy); color: var(--white); border: 0; padding: 6px 12px;
+  border-radius: 6px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.d-row .copy:hover { background: var(--blue); }
+.d-row .copy.done { background: var(--sage); }
+.blank { font-weight: 800; background: #fff3a8; color: #5b4300; padding: 1px 5px; border-radius: 4px; }
+.d-gateway {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0;
+}
+.d-gateway div { background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 10px; text-align: center; font-weight: 700; font-size: 13.5px; color: var(--navy); }
+.d-fields { display: grid; gap: 12px; margin-bottom: 14px; }
+.d-fields input { width: 100%; padding: 12px; font-size: 15px; }
+.d-fields small { color: var(--muted); font-size: 12px; margin-top: -6px; }
+.d-fee { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); margin-bottom: 18px; cursor: pointer; }
+.d-total { display: flex; justify-content: space-between; font-weight: 700; color: var(--navy); padding: 12px 0; border-top: 1px dashed var(--line); margin-bottom: 14px; }
+.d-submit { width: 100%; padding: 15px; font-size: 16px; }
+.d-result { display: none; margin-top: 12px; font-size: 13.5px; color: #145c37; }
+.d-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); text-align: center; }
+.d-badges span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+@media (max-width: 640px) {
+  .donate-card { padding: 20px 16px; }
+  .d-amounts { grid-template-columns: repeat(2, 1fr); }
+  .d-tabs { grid-template-columns: repeat(3, 1fr); }
+  .d-row { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -678,6 +752,7 @@ footer p {
       <a href="#focus">Our Focus</a>
       <a href="#stories">Stories</a>
       <a href="#media">Photos &amp; Videos</a>
+      <a href="#donate">Donate</a>
       <a href="#join">Get Involved</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -955,6 +1030,114 @@ footer p {
     </div>
   </section>
 
+  <section id="donate">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="kicker">Support IHAF</div>
+        <h2>Give to support our mission.</h2>
+        <p>Every contribution supports humanitarian cooperation and community programmes in Uganda and beyond.</p>
+      </div>
+
+      <div class="donate-card">
+        <div class="d-toggle" role="group" aria-label="Donation frequency">
+          <button type="button" class="active" data-freq="One-Time">One-Time Gift</button>
+          <button type="button" data-freq="Monthly">Monthly</button>
+        </div>
+
+        <div class="d-head">
+          <span>Select amount</span>
+          <select id="d-currency" aria-label="Currency">
+            <option value="USD">USD ($)</option>
+            <option value="UGX">UGX (Shs)</option>
+          </select>
+        </div>
+        <div class="d-amounts" id="d-presets"></div>
+        <input type="number" id="d-custom" min="1" placeholder="Or enter a custom amount…">
+
+        <span class="d-label">Choose payment method</span>
+        <div class="d-tabs" role="tablist">
+          <button type="button" class="active" data-tab="momo"><span>📱</span>Mobile Money</button>
+          <button type="button" data-tab="card"><span>💳</span>Cards &amp; Wallets</button>
+          <button type="button" data-tab="bank"><span>🏦</span>Ugandan Bank</button>
+          <button type="button" data-tab="wu"><span>🌍</span>Western Union</button>
+          <button type="button" data-tab="crypto"><span>🪙</span>Binance &amp; Crypto</button>
+        </div>
+
+        <!-- Mobile Money -->
+        <div class="d-panel active" id="tab-momo">
+          <h3>Mobile Money (Uganda)</h3>
+          <p>Send via Merchant ID or phone number, then add your transaction reference below.</p>
+          <div class="d-row"><span>MTN MoMo Merchant ID: <b class="blank">[INSERT MTN MERCHANT ID]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>MTN Phone Number: <b class="blank">[INSERT MTN PHONE NUMBER +256...]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Airtel Money Merchant ID: <b class="blank">[INSERT AIRTEL MERCHANT ID]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Airtel Phone Number: <b class="blank">[INSERT AIRTEL PHONE NUMBER +256...]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Registered Name: <b class="blank">[INSERT REGISTERED NAME]</b></span><button type="button" class="copy">Copy</button></div>
+        </div>
+
+        <!-- Cards & Wallets -->
+        <div class="d-panel" id="tab-card">
+          <h3>Cards &amp; Digital Wallets</h3>
+          <p>Pay securely online with the options below through our payment gateway.</p>
+          <div class="d-gateway"><div>💳 Visa</div><div>💳 Mastercard</div><div>🅿️ PayPal</div><div>🍎 Apple Pay</div></div>
+          <div class="d-row"><span>Payment Gateway: <b class="blank">[INSERT GATEWAY e.g. Flutterwave / Pesapal / Stripe]</b></span></div>
+          <div class="d-row"><span>Checkout Link: <b class="blank">[INSERT GATEWAY CHECKOUT LINK]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>PayPal Email / Link: <b class="blank">[INSERT PAYPAL EMAIL OR PAYPAL.ME LINK]</b></span><button type="button" class="copy">Copy</button></div>
+        </div>
+
+        <!-- Ugandan Bank -->
+        <div class="d-panel" id="tab-bank">
+          <h3>Ugandan Bank Transfer</h3>
+          <p>EFT / RTGS / SWIFT. Please add your name as the payment reference.</p>
+          <div class="d-row"><span>Bank Name: <b class="blank">[INSERT BANK NAME]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Account Name: <b class="blank">[INSERT ACCOUNT NAME]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>UGX Account Number: <b class="blank">[INSERT UGX ACCOUNT NUMBER]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>USD Account Number: <b class="blank">[INSERT USD ACCOUNT NUMBER]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>SWIFT / BIC Code: <b class="blank">[INSERT SWIFT/BIC CODE]</b></span><button type="button" class="copy">Copy</button></div>
+        </div>
+
+        <!-- Western Union -->
+        <div class="d-panel" id="tab-wu">
+          <h3>Western Union</h3>
+          <p>Send to the receiver below, then enter your MTCN in the optional box so we can match your gift.</p>
+          <div class="d-row"><span>Receiver Full Legal Name: <b class="blank">[INSERT RECEIVER FULL LEGAL NAME]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>City / Country: <b>Kampala, Uganda</b></span><button type="button" class="copy" data-copy="Kampala, Uganda">Copy</button></div>
+          <div class="d-row"><span>Receiver Phone Number: <b class="blank">[INSERT RECEIVER PHONE NUMBER +256...]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>National ID / Passport No.: <b class="blank">[INSERT NATIONAL ID / PASSPORT NUMBER]</b></span><button type="button" class="copy">Copy</button></div>
+        </div>
+
+        <!-- Binance & Crypto -->
+        <div class="d-panel" id="tab-crypto">
+          <h3>Binance &amp; Crypto</h3>
+          <p>Double-check the network before sending. Wrong-network transfers cannot be recovered.</p>
+          <div class="d-row"><span>Binance Pay ID: <b class="blank">[INSERT BINANCE PAY ID]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Binance Email: <b class="blank">[INSERT BINANCE EMAIL]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>USDT (TRC20) Address: <b class="blank">[INSERT USDT TRC20 WALLET ADDRESS]</b></span><button type="button" class="copy">Copy</button></div>
+          <div class="d-row"><span>Bitcoin (BTC) Address: <b class="blank">[INSERT BTC ADDRESS]</b></span><button type="button" class="copy">Copy</button></div>
+        </div>
+
+        <form id="donateForm">
+          <div class="d-fields">
+            <input id="d-name" type="text" placeholder="Full name" required>
+            <input id="d-email" type="email" placeholder="Email address (for your receipt)" required>
+            <input id="d-ref" type="text" placeholder="Transaction reference / MTCN (optional)">
+          </div>
+          <label class="d-fee"><input type="checkbox" id="d-fee"> I’d like to add 3% to cover processing fees</label>
+          <div class="d-total"><span id="d-summary">One-Time gift</span><span id="d-total">—</span></div>
+          <button class="btn d-submit" type="submit">Complete donation →</button>
+          <p class="form-note">This prepares a confirmation email to IHAF on your device. It does not process payments or store your information.</p>
+          <p class="d-result" id="d-result" role="status"></p>
+        </form>
+
+        <div class="d-badges">
+          <span>🔒 Secure giving</span>
+          <span>🧾 Receipts on request</span>
+          <span>📋 NGO Reg. No: <b class="blank">[INSERT NGO REGISTRATION NUMBER]</b></span>
+          <span>🤝 Accountable &amp; transparent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="join" id="join">
     <div class="wrap join-grid">
       <div>
@@ -1033,6 +1216,7 @@ footer p {
         <a href="#about">About</a>
         <a href="#focus">Our focus</a>
         <a href="#stories">Stories</a>
+        <a href="#donate">Donate</a>
         <a href="#join">Get involved</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1075,6 +1259,88 @@ document.getElementById('interestForm').addEventListener('submit', e => {
   result.style.display = 'block';
   result.innerHTML = 'Opening your email app to send to <strong>ihaf.global@gmail.com</strong>…<br>If nothing opens, <a href="' + mailto + '" style="color:#145c37;font-weight:bold">click here to send</a>.';
 });
+
+/* ===== Donate section ===== */
+(function () {
+  const PRESETS = { USD: [25, 50, 100, 250], UGX: [50000, 100000, 250000, 500000] };
+  const SYMBOL = { USD: '$', UGX: 'Shs ' };
+  let freq = 'One-Time', amount = 25;
+  const $ = id => document.getElementById(id);
+  const cur = () => $('d-currency').value;
+  const fmt = n => SYMBOL[cur()] + Number(n.toFixed(2)).toLocaleString('en-US');
+
+  function renderPresets() {
+    const box = $('d-presets');
+    box.innerHTML = '';
+    PRESETS[cur()].forEach((v, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = SYMBOL[cur()] + v.toLocaleString('en-US');
+      if (i === 0) b.classList.add('active');
+      b.addEventListener('click', () => {
+        box.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        $('d-custom').value = '';
+        amount = v; update();
+      });
+      box.appendChild(b);
+    });
+    amount = PRESETS[cur()][0];
+    $('d-custom').value = '';
+    update();
+  }
+  function base() { const c = parseFloat($('d-custom').value); return c > 0 ? c : amount; }
+  function total() { return base() * ($('d-fee').checked ? 1.03 : 1); }
+  function update() {
+    $('d-summary').textContent = freq + ' gift' + ($('d-fee').checked ? ' (incl. 3% fees)' : '');
+    $('d-total').textContent = fmt(total());
+  }
+
+  document.querySelectorAll('.d-toggle button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.d-toggle button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); freq = b.dataset.freq; update();
+  }));
+  document.querySelectorAll('.d-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.d-tabs button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.d-panel').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); $('tab-' + b.dataset.tab).classList.add('active');
+  }));
+  $('d-currency').addEventListener('change', renderPresets);
+  $('d-custom').addEventListener('input', () => {
+    $('d-presets').querySelectorAll('button').forEach(x => x.classList.remove('active')); update();
+  });
+  $('d-fee').addEventListener('change', update);
+
+  document.querySelectorAll('#donate .copy').forEach(btn => btn.addEventListener('click', async () => {
+    const row = btn.closest('.d-row');
+    const val = btn.dataset.copy || (row.querySelector('.blank') || row.querySelector('b')).textContent.trim();
+    try { await navigator.clipboard.writeText(val); }
+    catch (e) {
+      const t = document.createElement('textarea'); t.value = val; document.body.appendChild(t);
+      t.select(); document.execCommand('copy'); t.remove();
+    }
+    const old = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1500);
+  }));
+
+  $('donateForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const method = document.querySelector('.d-tabs button.active').textContent.trim();
+    const body = 'IHAF donation notification\nName: ' + $('d-name').value +
+      '\nEmail: ' + $('d-email').value +
+      '\nFrequency: ' + freq +
+      '\nAmount: ' + fmt(total()) + ' (' + cur() + ')' +
+      '\nCovering 3% fees: ' + ($('d-fee').checked ? 'Yes' : 'No') +
+      '\nPayment method: ' + method +
+      '\nTransaction reference / MTCN: ' + ($('d-ref').value || 'Not provided');
+    const mailto = 'mailto:ihaf.global@gmail.com?subject=' + encodeURIComponent('IHAF donation notification') + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+    const r = $('d-result'); r.style.display = 'block';
+    r.innerHTML = 'Opening your email app… If nothing opens, <a href="' + mailto + '" style="color:#145c37;font-weight:bold">click here to send</a>.';
+  });
+
+  renderPresets();
+})();
 </script>
 
 <!-- Floating WhatsApp button -->
