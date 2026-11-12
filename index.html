@@ -712,7 +712,7 @@ footer p {
         </article>
         <article class="card">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/19297739/pexels-photo-19297739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children in a rural community">
+            <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Woman serving food to children in an African community">
           </div>
           <div class="card-body">
             <h3>Food &amp; basic needs</h3>
@@ -739,11 +739,11 @@ footer p {
         </article>
         <article class="card">
           <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=600&q=80" alt="Young person smiling in a Ugandan village">
+            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=600&q=80" alt="People carrying water containers in rural Africa">
           </div>
           <div class="card-body">
-            <h3>Health &amp; wellbeing</h3>
-            <p>Partnerships that help communities access appropriate care.</p>
+            <h3>Clean water</h3>
+            <p>Supporting access to safe water and basic sanitation for communities.</p>
           </div>
         </article>
         <article class="card">
@@ -751,8 +751,8 @@ footer p {
             <img src="https://images.pexels.com/photos/33976322/pexels-photo-33976322.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Village street with children and community members">
           </div>
           <div class="card-body">
-            <h3>Partnership &amp; coordination</h3>
-            <p>Bringing organisations and volunteers together transparently.</p>
+            <h3>Faith &amp; community spaces</h3>
+            <p>Respect for places of worship and community buildings that bring people together.</p>
           </div>
         </article>
       </div>
@@ -796,25 +796,25 @@ footer p {
       </div>
       <div class="story-grid">
         <div class="story-large">
-          <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=1000&q=80" alt="Classroom of children in Sierra Leone">
+          <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Woman serving food to children in an African community">
           <div class="overlay">
-            <h3>Learning together</h3>
-            <p>A classroom in Sierra Leone — education remains one of the strongest foundations for long-term opportunity.</p>
+            <h3>Food that reaches people</h3>
+            <p>A community meal being shared — food security remains one of the most immediate humanitarian needs.</p>
           </div>
         </div>
         <div class="story-side">
           <div class="story-small">
-            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=700&q=80" alt="Child smiling in Ugandan village">
+            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=700&q=80" alt="People carrying water in rural Africa">
             <div class="overlay">
-              <h3>Everyday joy</h3>
-              <p>A moment of light in a village in Uganda.</p>
+              <h3>Water is life</h3>
+              <p>Many communities still walk long distances for water. Clean water changes everything.</p>
             </div>
           </div>
           <div class="story-small">
-            <img src="https://images.pexels.com/photos/34253699/pexels-photo-34253699.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Children smiling together">
+            <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=700&q=80" alt="Classroom of children">
             <div class="overlay">
-              <h3>Friendship &amp; belonging</h3>
-              <p>Community starts with the people around us.</p>
+              <h3>Learning together</h3>
+              <p>Education remains one of the strongest foundations for opportunity.</p>
             </div>
           </div>
         </div>
@@ -867,6 +867,7 @@ footer p {
           <h3>IHAF — International Humanitarian Aid Federation</h3>
           <p><strong>Proposed base:</strong> Uganda<br>
           <strong>Email:</strong> <a href="mailto:ihaf.global@gmail.com" style="color:var(--blue);font-weight:600">ihaf.global@gmail.com</a><br>
+          <strong>WhatsApp:</strong> <a href="https://wa.me/256749269482" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">+256 749 269482</a><br>
           <strong>Scope:</strong> International humanitarian cooperation</p>
           <p class="arabic">الاتحاد الدولي للمساعدات الإنسانية</p>
           <p style="font-size:13px;color:var(--muted)">International Federation for Humanitarian Aid</p>
@@ -898,7 +899,7 @@ footer p {
       </div>
     </div>
     <div class="copyright">
-      <span>© <span id="year"></span> IHAF concept website. Photos used under free licenses (Unsplash / Pexels).</span>
+      <span>© <span id="year"></span> IHAF concept website. <span id="updated"></span> Photos: Unsplash / Pexels.</span>
       <span>Humanity • Cooperation • Accountability</span>
     </div>
   </div>
@@ -918,22 +919,22 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menu.textContent = '☰';
 }));
 document.getElementById('year').textContent = new Date().getFullYear();
+const updated = document.getElementById('updated');
+if (updated) {
+  const d = new Date();
+  updated.textContent = 'Last updated: ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
+}
 document.getElementById('interestForm').addEventListener('submit', e => {
   e.preventDefault();
   const f = e.currentTarget;
   const body = `IHAF expression of interest\nName: ${f.name.value}\nEmail: ${f.email.value}\nInterested as: ${f.role.value}\nMessage: ${f.message.value || 'No message added.'}`;
+  const subject = encodeURIComponent('Expression of interest in IHAF');
+  const mailto = 'mailto:ihaf.global@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+  // Open the user's email app directly with the correct recipient
+  window.location.href = mailto;
   const result = document.getElementById('formResult');
   result.style.display = 'block';
-  result.textContent = 'Your message is ready. Your email app may open to let you send it.';
-  const link = document.createElement('a');
-  link.href = 'mailto:?subject=' + encodeURIComponent('Expression of interest in IHAF') + '&body=' + encodeURIComponent(body);
-  link.style.display = 'inline-block';
-  link.style.marginTop = '8px';
-  link.style.fontWeight = 'bold';
-  link.style.color = '#145c37';
-  link.textContent = 'Open email app to send';
-  result.appendChild(document.createElement('br'));
-  result.appendChild(link);
+  result.innerHTML = 'Opening your email app to send to <strong>ihaf.global@gmail.com</strong>…<br>If nothing opens, <a href="' + mailto + '" style="color:#145c37;font-weight:bold">click here to send</a>.';
 });
 </script>
 </body>
