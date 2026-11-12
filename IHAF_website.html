@@ -677,6 +677,7 @@ footer p {
       <a href="#about">About</a>
       <a href="#focus">Our Focus</a>
       <a href="#stories">Stories</a>
+      <a href="#media">Photos &amp; Videos</a>
       <a href="#join">Get Involved</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -881,6 +882,75 @@ footer p {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============================================
+       MEDIA GALLERY – EASY TO EDIT
+       How to add a new image:
+       1. Upload your image to the GitHub repository
+       2. Copy one of the blocks below
+       3. Change the file name (e.g. my-photo.jpg)
+       4. Change the caption text
+       ============================================ -->
+  <section id="media" style="background:var(--sand);">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="kicker">Photos &amp; Videos</div>
+        <h2>Moments from the field</h2>
+        <p>Add new photos or videos by uploading the file to GitHub and copying a block below.</p>
+      </div>
+
+      <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+        <!-- IMAGE EXAMPLE 1 – replace src and caption -->
+        <article class="card">
+          <div class="card-img" style="height:200px;">
+            <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food distribution">
+          </div>
+          <div class="card-body">
+            <h3>Community meal</h3>
+            <p>Food being shared in the community.</p>
+          </div>
+        </article>
+
+        <!-- IMAGE EXAMPLE 2 -->
+        <article class="card">
+          <div class="card-img" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=600&q=80" alt="Water collection">
+          </div>
+          <div class="card-body">
+            <h3>Clean water</h3>
+            <p>Access to safe water remains a daily challenge in many areas.</p>
+          </div>
+        </article>
+
+        <!-- VIDEO EXAMPLE – replace the YouTube ID -->
+        <article class="card">
+          <div class="card-img" style="height:200px; background:#111; display:flex; align-items:center; justify-content:center;">
+            <div style="position:relative; width:100%; height:100%;">
+              <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                allowfullscreen
+                title="Video">
+              </iframe>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Video message</h3>
+            <p>Replace this with your own YouTube video ID.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="margin-top:36px; padding:22px; background:white; border-radius:12px; border:1px dashed var(--line); font-size:14px; color:var(--muted);">
+        <strong style="color:var(--navy);">How to add your own image or video</strong><br><br>
+        <strong>Image:</strong> Upload the file to GitHub → copy one image card above → change <code>src="your-file.jpg"</code> and the caption.<br><br>
+        <strong>Video:</strong> Upload to YouTube → copy the video card → replace the YouTube ID in the <code>src</code> link.
       </div>
     </div>
   </section>
