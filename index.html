@@ -598,69 +598,6 @@ footer p {
   .photo-strip img { height: 180px; }
   .hero-content { padding: 70px 0 60px; }
 }
-
-/* WhatsApp buttons */
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 22px;
-  border-radius: 8px;
-  background: #25D366;
-  color: #fff !important;
-  font-weight: 700;
-  font-size: 15px;
-  border: 0;
-  cursor: pointer;
-  transition: transform 0.18s, background 0.18s, box-shadow 0.18s;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-  text-decoration: none;
-}
-.btn-whatsapp:hover {
-  background: #20bd5a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-}
-.btn-whatsapp svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #25D366;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.whatsapp-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55);
-}
-.whatsapp-float svg {
-  width: 30px;
-  height: 30px;
-  fill: white;
-}
-@media (max-width: 560px) {
-  .whatsapp-float {
-    bottom: 18px;
-    right: 18px;
-    width: 54px;
-    height: 54px;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -677,7 +614,6 @@ footer p {
       <a href="#about">About</a>
       <a href="#focus">Our Focus</a>
       <a href="#stories">Stories</a>
-      <a href="#media">Photos &amp; Videos</a>
       <a href="#join">Get Involved</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -776,7 +712,7 @@ footer p {
         </article>
         <article class="card">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Woman serving food to children in an African community">
+            <img src="https://images.pexels.com/photos/19297739/pexels-photo-19297739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children in a rural community">
           </div>
           <div class="card-body">
             <h3>Food &amp; basic needs</h3>
@@ -803,11 +739,11 @@ footer p {
         </article>
         <article class="card">
           <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=600&q=80" alt="People carrying water containers in rural Africa">
+            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=600&q=80" alt="Young person smiling in a Ugandan village">
           </div>
           <div class="card-body">
-            <h3>Clean water</h3>
-            <p>Supporting access to safe water and basic sanitation for communities.</p>
+            <h3>Health &amp; wellbeing</h3>
+            <p>Partnerships that help communities access appropriate care.</p>
           </div>
         </article>
         <article class="card">
@@ -815,8 +751,8 @@ footer p {
             <img src="https://images.pexels.com/photos/33976322/pexels-photo-33976322.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Village street with children and community members">
           </div>
           <div class="card-body">
-            <h3>Faith &amp; community spaces</h3>
-            <p>Respect for places of worship and community buildings that bring people together.</p>
+            <h3>Partnership &amp; coordination</h3>
+            <p>Bringing organisations and volunteers together transparently.</p>
           </div>
         </article>
       </div>
@@ -860,97 +796,28 @@ footer p {
       </div>
       <div class="story-grid">
         <div class="story-large">
-          <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Woman serving food to children in an African community">
+          <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=1000&q=80" alt="Classroom of children in Sierra Leone">
           <div class="overlay">
-            <h3>Food that reaches people</h3>
-            <p>A community meal being shared — food security remains one of the most immediate humanitarian needs.</p>
+            <h3>Learning together</h3>
+            <p>A classroom in Sierra Leone — education remains one of the strongest foundations for long-term opportunity.</p>
           </div>
         </div>
         <div class="story-side">
           <div class="story-small">
-            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=700&q=80" alt="People carrying water in rural Africa">
+            <img src="https://images.unsplash.com/photo-1728135020024-b617b9f96394?w=700&q=80" alt="Child smiling in Ugandan village">
             <div class="overlay">
-              <h3>Water is life</h3>
-              <p>Many communities still walk long distances for water. Clean water changes everything.</p>
+              <h3>Everyday joy</h3>
+              <p>A moment of light in a village in Uganda.</p>
             </div>
           </div>
           <div class="story-small">
-            <img src="https://images.unsplash.com/photo-1567057419565-4349c49d8a04?w=700&q=80" alt="Classroom of children">
+            <img src="https://images.pexels.com/photos/34253699/pexels-photo-34253699.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Children smiling together">
             <div class="overlay">
-              <h3>Learning together</h3>
-              <p>Education remains one of the strongest foundations for opportunity.</p>
+              <h3>Friendship &amp; belonging</h3>
+              <p>Community starts with the people around us.</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- ============================================
-       MEDIA GALLERY – EASY TO EDIT
-       How to add a new image:
-       1. Upload your image to the GitHub repository
-       2. Copy one of the blocks below
-       3. Change the file name (e.g. my-photo.jpg)
-       4. Change the caption text
-       ============================================ -->
-  <section id="media" style="background:var(--sand);">
-    <div class="wrap">
-      <div class="section-head center">
-        <div class="kicker">Photos &amp; Videos</div>
-        <h2>Moments from the field</h2>
-        <p>Add new photos or videos by uploading the file to GitHub and copying a block below.</p>
-      </div>
-
-      <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-
-        <!-- IMAGE EXAMPLE 1 – replace src and caption -->
-        <article class="card">
-          <div class="card-img" style="height:200px;">
-            <img src="https://images.pexels.com/photos/31095001/pexels-photo-31095001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Food distribution">
-          </div>
-          <div class="card-body">
-            <h3>Community meal</h3>
-            <p>Food being shared in the community.</p>
-          </div>
-        </article>
-
-        <!-- IMAGE EXAMPLE 2 -->
-        <article class="card">
-          <div class="card-img" style="height:200px;">
-            <img src="https://images.unsplash.com/photo-1543181077-099f32f30a1c?w=600&q=80" alt="Water collection">
-          </div>
-          <div class="card-body">
-            <h3>Clean water</h3>
-            <p>Access to safe water remains a daily challenge in many areas.</p>
-          </div>
-        </article>
-
-        <!-- VIDEO EXAMPLE – replace the YouTube ID -->
-        <article class="card">
-          <div class="card-img" style="height:200px; background:#111; display:flex; align-items:center; justify-content:center;">
-            <div style="position:relative; width:100%; height:100%;">
-              <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
-                allowfullscreen
-                title="Video">
-              </iframe>
-            </div>
-          </div>
-          <div class="card-body">
-            <h3>Video message</h3>
-            <p>Replace this with your own YouTube video ID.</p>
-          </div>
-        </article>
-
-      </div>
-
-      <div style="margin-top:36px; padding:22px; background:white; border-radius:12px; border:1px dashed var(--line); font-size:14px; color:var(--muted);">
-        <strong style="color:var(--navy);">How to add your own image or video</strong><br><br>
-        <strong>Image:</strong> Upload the file to GitHub → copy one image card above → change <code>src="your-file.jpg"</code> and the caption.<br><br>
-        <strong>Video:</strong> Upload to YouTube → copy the video card → replace the YouTube ID in the <code>src</code> link.
       </div>
     </div>
   </section>
@@ -1000,14 +867,7 @@ footer p {
           <h3>IHAF — International Humanitarian Aid Federation</h3>
           <p><strong>Proposed base:</strong> Uganda<br>
           <strong>Email:</strong> <a href="mailto:ihaf.global@gmail.com" style="color:var(--blue);font-weight:600">ihaf.global@gmail.com</a><br>
-          <strong>WhatsApp:</strong> <a href="https://wa.me/256749269482" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">+256 749 269482</a><br>
           <strong>Scope:</strong> International humanitarian cooperation</p>
-          <p style="margin:18px 0 8px">
-            <a class="btn-whatsapp" href="https://wa.me/256749269482?text=Hello%20IHAF%2C%20I%20would%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Chat on WhatsApp
-            </a>
-          </p>
           <p class="arabic">الاتحاد الدولي للمساعدات الإنسانية</p>
           <p style="font-size:13px;color:var(--muted)">International Federation for Humanitarian Aid</p>
           <div class="notice">IHAF is presented here as a proposed organisation. Registration, official contacts, partnerships, programmes and fundraising must be confirmed before public launch.</div>
@@ -1038,7 +898,7 @@ footer p {
       </div>
     </div>
     <div class="copyright">
-      <span>© <span id="year"></span> IHAF concept website. <span id="updated"></span> Photos: Unsplash / Pexels.</span>
+      <span>© <span id="year"></span> IHAF concept website. Photos used under free licenses (Unsplash / Pexels).</span>
       <span>Humanity • Cooperation • Accountability</span>
     </div>
   </div>
@@ -1058,29 +918,23 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menu.textContent = '☰';
 }));
 document.getElementById('year').textContent = new Date().getFullYear();
-const updated = document.getElementById('updated');
-if (updated) {
-  const d = new Date();
-  updated.textContent = 'Last updated: ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
-}
 document.getElementById('interestForm').addEventListener('submit', e => {
   e.preventDefault();
   const f = e.currentTarget;
   const body = `IHAF expression of interest\nName: ${f.name.value}\nEmail: ${f.email.value}\nInterested as: ${f.role.value}\nMessage: ${f.message.value || 'No message added.'}`;
-  const subject = encodeURIComponent('Expression of interest in IHAF');
-  const mailto = 'mailto:ihaf.global@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
-  // Open the user's email app directly with the correct recipient
-  window.location.href = mailto;
   const result = document.getElementById('formResult');
   result.style.display = 'block';
-  result.innerHTML = 'Opening your email app to send to <strong>ihaf.global@gmail.com</strong>…<br>If nothing opens, <a href="' + mailto + '" style="color:#145c37;font-weight:bold">click here to send</a>.';
+  result.textContent = 'Your message is ready. Your email app may open to let you send it.';
+  const link = document.createElement('a');
+  link.href = 'mailto:?subject=' + encodeURIComponent('Expression of interest in IHAF') + '&body=' + encodeURIComponent(body);
+  link.style.display = 'inline-block';
+  link.style.marginTop = '8px';
+  link.style.fontWeight = 'bold';
+  link.style.color = '#145c37';
+  link.textContent = 'Open email app to send';
+  result.appendChild(document.createElement('br'));
+  result.appendChild(link);
 });
 </script>
-
-<!-- Floating WhatsApp button -->
-<a class="whatsapp-float" href="https://wa.me/256749269482?text=Hello%20IHAF%2C%20I%20would%20like%20to%20get%20in%20touch." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
 </body>
 </html>
